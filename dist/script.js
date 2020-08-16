@@ -5259,8 +5259,10 @@ function () {
       var _this = this;
 
       this.btns.forEach(function (item) {
-        item.addEventListener('click', function () {
+        item.addEventListener('click', function (e) {
           _this.downloadItem(_this.path);
+
+          e.stopPropagation();
         });
       });
     }
